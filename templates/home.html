@@ -43,67 +43,24 @@
 					<ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
 
 						<li >
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+							<a href="#" class="{% url 'pages:home' %}" data-toggle="dropdown">Home</a>
 							<ul class="dropdown-menu animated fadeOutUp">
 							</ul>
 						</li>
 
-							<ul class="dropdown-menu megamenu-content" role="menu">
-								<li>
-									<div class="row">
-										<div class="col-menu col-md-3">
-											<h6 class="title">Destinations</h6>
-											<div class="content">
-												<ul class="menu-col">
-													<li><a href="destination-grid.html">Destination Grid</a></li>
-													<li><a href="destination-list.html">Destination List</a></li>
-													<li><a href="destination-grid-sidebar.html">Destination Grid Sidebar</a></li>
-													<li><a href="destination-list-sidebar.html">Destination List Sidebar</a></li>
-													<li><a href="destination-detail.html">Destination Detail</a></li>
-												</ul>
-											</div>
-										</div><!-- end col-3 -->
-										<div class="col-menu col-md-3">
-											<h6 class="title">Tours</h6>
-											<div class="content">
-												<ul class="menu-col">
-													<li><a href="tour-grid.html">Tour Grid</a></li>
-													<li><a href="tour-list.html">Tour List</a></li>
-													<li><a href="tour-grid-sidebar.html">Tour Grid Sidebar</a></li>
-													<li><a href="tour-list-sidebar.html">tour List Sidebar</a></li>
-													<li><a href="tour-detail.html">Tour Detail</a></li>
-												</ul>
-											</div>
-										</div><!-- end col-3 -->
-										<div class="col-menu col-md-3">
-											<h6 class="title">Hotels</h6>
-											<div class="content">
-												<ul class="menu-col">
-													<li><a href="hotel-grid.html">Hotel Grid</a></li>
-													<li><a href="hotel-list.html">Hotel List</a></li>
-													<li><a href="hotel-grid-sidebar.html">Hotel Grid Sidebar</a></li>
-													<li><a href="hotel-list-sidebar.html">Hotel List Sidebar</a></li>
-													<li><a href="hotel-detail.html">Hotel Detail</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-menu col-md-3">
-											<h6 class="title">Restaurants</h6>
-											<div class="content">
-												<ul class="menu-col">
-													<li><a href="restaurant-grid.html">Restaurant Grid</a></li>
-													<li><a href="restaurant-list.html">Restaurant List</a></li>
-													<li><a href="restaurant-grid-sidebar.html">Restaurant Grid Sidebar</a></li>
-													<li><a href="restaurant-list-sidebar.html">Restaurant List Sidebar</a></li>
-													<li><a href="restaurant-detail.html">Restaurant Detail</a></li>
-												</ul>
-											</div>
-										</div><!-- end col-3 -->
-									</div><!-- end row -->
-								</li>
-							</ul>
+
+
+                        <li>
+							<a href="{% url 'find_guide:list' %}">Find Guide</a>
 						</li>
 
+
+
+						<li>
+							<a href="{% url 'dashboard:list' %}">Dashboard</a>
+						</li>
+
+					</ul>
 						<li>
 
 						<li>

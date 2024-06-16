@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u)p5j(($5x!_##9%efr%m6hw_^+d_7bm6*4m1m=u6&n2*gf8)_'
+SECRET_KEY = 'django-insecure-3+4++%_o&x8+z#r#-3169^v(8x_h*zr^0fl-ms@dx@$)^30p+s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,13 +28,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'pages',
-    'dashboard',
-    'find_guide',
+    'blogs',
+    'products',
+    'users',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -95,26 +98,42 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'UTC'
+LANGUAGES = [
+    ('en', 'English'),
+    ('ru', 'Russian'),
+]
+
+LOCALE_PATHS = [BASE_DIR / 'locale']
+
+
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'assets/', ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = "media/"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+STATICFILES_DIRS = [
+    BASE_DIR / "assets",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'muhammadsodiqkasimv34@gmail.com'
+EMAIL_HOST_PASSWORD = 'yfxt kzue kjqt gxpw'
+
+DEFAULT_FROM_EMAIL = 'muhammadsodiqkasimv34@gmail.com'
+
+LOGIN_URL = '/users/login_register/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
